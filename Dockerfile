@@ -33,7 +33,7 @@ RUN version=$(curl -s -L --connect-timeout 5 --max-time 10 --retry 2 --retry-del
 
 RUN chmod 777 -R /opt/app
 
-EXPOSE 3000
+EXPOSE 3000 
 
 CMD mkdir -p /opt/app/data; cd /opt/app/data; \
   META_FOLDER=/opt/app/data HOST=:: PORT=9876 node /opt/app/http-meta.bundle.js > /opt/app/data/http-meta.log 2>&1 & echo "HTTP-META is running..."; \
